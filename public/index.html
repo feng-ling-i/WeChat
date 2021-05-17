@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仿微信聊天室</title>
+  <!--the css for this plugin-->
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="bg-blur">
+  <!-- 登录盒子 -->
+  <div class="login_box">
+    <div class="title">用户登录</div>
+    <p>用户名</p>
+    <input type="text" list="userlist" placeholder="请输入用户名" required id="username">
+    <p>选择头像</p>
+    <ul class="avatar" id="login_avatar">
+      <li class="now"><img src="images/1.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/2.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/3.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/4.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/5.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/6.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/7.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/8.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/9.jpg" alt="" ondragstart="return false"></li>
+      <li><img src="images/10.jpg" alt="" ondragstart="return false"></li>
+    </ul>
+    <button type="button" class="weui-btn" id="loginBtn">登录</button>
+  </div>
+
+  <!-- 聊天盒子 -->
+  <div class="container invisible">
+    <!-- 左侧用户列表 -->
+    <div class="user-list">
+      <div class="header">
+        <div class="avatar">
+          <img id="avatar-url" src="images/2.jpg" alt="" class="img avatar_url">
+        </div>
+        <div class="info">
+          <h3 id="loginUserName" class="username">清流</h3>
+        </div>
+      </div>
+      <div class="title">
+        <h3>用户列表</h3>
+      </div>
+      <ul>
+        <!-- <li class="user">
+          <div class="avatar"><img src="images/avatar01.jpg" alt=""></div>
+          <div class="name">群聊</div>
+        </li> -->
+      </ul>
+    </div>
+    <!-- 聊天主窗口 -->
+    <div class="box">
+      <!-- 群聊 -->
+      <div class="box-hd">
+        <h3 id="chatName">群聊( <span id="userTotalNumber"> &nbsp;</span>)</h3>
+      </div>
+      <div class="box-bd">
+        <!-- 系统消息模板 -->
+        <!-- <div class="system">
+          <p class="message_system">
+            <span class="content">"往事随风"加如了群聊</span>
+          </p>
+        </div> -->
+
+        <!-- 自己的消息模板 -->
+        <!-- <div class="message-box">
+          <div class="my message">
+            <img src="images/avatar01.jpg" alt="" class="avatar">
+            <div class="content">
+              <div class="bubble">
+                <div class="bubble_cont">你好啊</div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- 别人消息模板 -->
+        <!-- <div class="message-box">
+          <div class="other message">
+            <img src="images/avatar01.jpg" alt="" class="avatar">
+            <div class="content">
+              <div class="nickname">曹操</div>
+              <div class="bubble">
+                <div class="bubble_cont">你好</div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+      <!-- 聊天窗口底部 -->
+      <div class="box-ft">
+        <!-- 工具栏 -->
+        <div class="toolbar">
+          <a href="javascript:;" title="图片" class="file">
+            <label for="file"></label>
+            <input type="file" id="file" style="display:none;">
+          </a>
+        </div>
+        <!-- 内容输入区 -->
+        <div class="content">
+          <!-- div添加contenteditable即可编辑 -->
+          <div id="content" class="text" contenteditable></div>
+        </div>
+        <!-- 发送按钮 -->
+        <div class="action">
+          <span class="desc">按下Ctrl+Enter发送</span>
+          <a class="btn-send" id="btn-send" href="javascript:;">发送</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- socket必备 -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- jquery -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- 自己的js -->
+  <script src="/js/index.js"></script>
+</body>
+
+</html>
